@@ -1,0 +1,27 @@
+<%- include('../partials/header'); %>
+
+<main class="main main-players container">
+    <h2 class="text-center text-primary"><%= name %></h2>
+    <section class="section section-players mt-5">
+        <div class="row">
+            <% data.forEach(item => { %>
+                <div class="col-md-4">
+                    <figure class="figure figure-player">
+                        <a href="/players/<%= item.id %>">
+                            <img src="<%= item.image %>" alt="<%= item.title %>" class="img-fluid fig-image">
+                            <figcaption class="figcaption figcap-bbplayer"> <%= item.Player %></figcaption>
+                        </a>
+                        <p class="figcaption figcap-hits"> Number of Hits:
+                            <a href="#"> <%= item.Hits %></a>
+                        </p>
+                        <p class="figcaption figcap-age"> Age That Year:
+                            <a href="#"> <%= item.AgeThatYear %></a>
+                        </p>
+                    </figure>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+</main>
+
+<%- include('../partials/footer'); %>
